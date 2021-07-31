@@ -1,0 +1,41 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block style %}
+div#blogViewImage img {
+    max-width: -webkit-fill-available;
+}
+{% endblock %}
+
+<!--{% load crispy_forms_tags %}-->
+{% block content %}
+
+
+          <!-- Date/Time -->
+          <p>Posted on {{blog.0.pub_date}}</p>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="/media/{{blog.0.blog_image}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+    {{blog.0.blog_title}}
+  </div>
+  <div class="card-body" id="blogViewImage">
+    <p class="card-text" >{{blog.0.blog_desc|safe}}</p>
+  </div>
+  <div class="card-footer text-muted">
+    {{blog.0.pub_date}}
+  </div>
+</div>
+
+
+
+
+{% endblock %}

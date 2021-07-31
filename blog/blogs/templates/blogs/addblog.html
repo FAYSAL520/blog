@@ -1,0 +1,145 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+            <div class="post-project">
+				<div class="post-project-fields">
+					<h3 class="mb-4">Post a job</h3>
+
+					<form method="POST">
+					{% csrf_token %}
+					  <div class="form-group">
+						<label >Title</label>
+						{{ blog_form.blog_title }}
+					  </div>
+
+					  <div class="form-group">
+						<label > Short Discription </label>
+                        {{ blog_form.blog_short_description }}
+					  </div>
+
+					  <div class="form-group">
+						<label> Category </label>
+                         {{ blog_form.blog_category }}
+					  </div>
+
+					  <div class="form-group">
+						<label>Sub Category</label>
+                         {{ blog_form.blog_subcategory }}
+					  </div>
+
+						<div class="form-group">
+						<label>Feature Image</label>
+                         {{ blog_form.blog_image }}
+					  </div>
+
+						<div class="form-group">
+						<label>Blog Details</label>
+                         {{ blog_form.blog_desc }}
+					  </div>
+
+						<div class="form-group">
+						<label> Upload Date </label>
+                         {{ blog_form.pub_date }}
+					  </div>
+
+						<div class="form-group">
+						<label>Blog Views</label>
+                         {{ blog_form.views }}
+					  </div>
+
+
+					  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+					</form>
+
+
+
+
+				</div><!--post-project-fields end-->
+
+				<a href="#" title=""><i class="la la-times-circle-o"></i></a>
+			</div><!--post-project end-->
+
+
+
+
+{% endblock %}
+
+
+
+
+<!--					 <form method="POST" enctype="multipart/form-data">-->
+<!--                            {% csrf_token %}-->
+<!--                            {{post_form.media}}-->
+<!--                            {{post_form|crispy}}-->
+<!--                     <input type="submit" value="Submit post" class="btn btn-success text-white">-->
+<!--					 </form>-->
+
+
+
+
+
+
+
+<!--						<form action="/addblog" method="POST">-->
+<!--							{% csrf_token %}-->
+<!--							  <div class="form-group">-->
+<!--								<label for="blog_title">Title :</label>-->
+<!--								<input type="text" class="form-control" id="blog_title" name="blog_title">-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="blog_short_description">Short Description :</label>-->
+<!--								<textarea class="form-control" name="blog_short_description" id="blog_short_description" rows="3"></textarea>-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="id_blog_category" class="requiredField">-->
+<!--									Blog category<span class="asteriskField"></span>-->
+<!--								</label>-->
+<!--								   <select name="blog_category" class="select" required="" id="id_blog_category">-->
+<!--									  <option value="" selected="">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+<!--										<option value="blog_category.id">PHP</option>-->
+<!--									</select>-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="blog_subcategory" class="requiredField">-->
+<!--									Blog Sub category<span class="asteriskField"></span>-->
+<!--								</label>-->
+<!--								   <select name="blog_subcategory" class="select" required="" id="blog_subcategory">-->
+<!--									  <option value="" selected="">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+<!--									  <option value="blog_subcategory"> PHP</option>-->
+<!--									</select>-->
+<!--							  </div>-->
+
+
+<!--							  <div class="form-group">-->
+<!--								<label for="blog_image"> Image :</label>-->
+<!--								<input type="file" name="blog_image" accept="media/blogs/imagex" class="clearablefileinput" required="" id="blog_image">-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="blog_desc">Description :</label>-->
+<!--								<textarea class="ckeditor" name="blog_desc" id="blog_desc" cols="30" rows="5"></textarea>-->
+<!--								<script>-->
+<!--									   CKEDITOR.replace( 'blog_desc' );-->
+<!--								 </script>-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="pub_date">Published Date :</label>-->
+<!--								<input type="date" value="0000-00-00" class="form-control" id="pub_date" name="pub_date">-->
+<!--							  </div>-->
+
+<!--							  <div class="form-group">-->
+<!--								<label for="views"> View Post :</label>-->
+<!--								<input type="text" value="" class="form-control" id="views" name="views">-->
+<!--							  </div>-->
+
+
+<!--							<button type="submit" class="btn btn-primary mt-4">Submit</button>-->
+<!--						</form>-->
+
+
